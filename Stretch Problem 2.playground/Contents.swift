@@ -4,21 +4,13 @@ import UIKit
 
 var str = "Hello, playground"
 
-var X = 5
-var Y = 100
 
-
-for number in 0...Y {
-    print (X)
-}
-
-func primeNumber(X: Int, Y: Int) {
-    for number in 0...Y {
-        if X == X % 5 {
-        
-        print (X)
+func getNumber(x: Int, y: Int) {
+    for number in 0...y {
+        if number % x == 0 {
+           print (number)
+        }
     }
 }
 
-}
-
+getNumber(3, y: 30)
