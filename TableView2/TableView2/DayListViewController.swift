@@ -48,6 +48,14 @@ class DayListViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.textLabel?.text = day.name
         return cell
     }
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let day = DayController.sharedInstance.dayArray[indexPath.row]
+            DayController.sharedInstance.removeDay(day)
+            myTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+    }
+    
     func tableView(tableView: UITableView, HeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 100.0
     }
